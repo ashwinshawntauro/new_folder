@@ -1,0 +1,299 @@
+/* Page container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    
+}
+
+/* Main container with proper spacing */
+.user-management-container {
+    margin-left: 250px;  /* Match navbar width */
+    margin-top: 100px;   /* Match header height */
+    padding: 20px;
+    min-height: calc(100vh - 100px);
+    background-color: #f5f5f5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    width: calc(100% - 250px);
+    
+}
+
+/* Content wrapper */
+.user-management-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    height: auto;
+}
+
+/* Title */
+.user-management-title {
+    color: #214163;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    text-align: left; 
+}
+
+/* Tabs section */
+.user-management-tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding: 0 0 10px 0;
+    background-color: white;
+    
+}
+
+/* Tab buttons */
+.user-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Active tab */
+.user-tab-btn.active {
+    color: #214163;
+    font-weight: 500;
+}
+
+.user-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #214163;
+}
+
+/* Tab icons */
+.user-tab-icon {
+    font-size: 18px;
+}
+
+/* Tab content area */
+.user-tab-content {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 400px;
+    
+}
+
+/* Content sections */
+.user-add-content,
+.user-deactivate-content,
+.user-update-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Section headings */
+.user-tab-content h3 {
+    color: #214163;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+}
+
+/* Hover effects */
+.user-tab-btn:hover {
+    color: #214163;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .user-management-container {
+        margin-left: 0;
+        margin-top: 160px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .user-management-content {
+        padding: 15px;
+    }
+
+    .user-management-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .user-tab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .user-tab-btn.active::after {
+        bottom: -2px;
+    }
+
+    .user-tab-content {
+        padding: 15px;
+    }
+}
+
+/* Add styles for the form and dropdown */
+.user-add-content {
+    margin-top: 20px;
+    padding: 0px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Center the buttons and space them out */
+  .form-actions {
+    display: flex;
+    justify-content:flex-start; /* Space between buttons */
+    align-items: center; /* Align buttons vertically in the center */
+    margin-top: 10px;
+  }
+  
+  .submit-btn, .clear-btn {
+     
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 15%; /* Make buttons take up equal width */
+    
+  }
+  
+  .submit-btn {
+    background-color: #214163;
+    color: white;
+    border: none;
+  }
+  
+  .submit-btn:hover {
+    background-color: #34495e;
+  }
+  
+  .clear-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+  
+  .clear-btn:hover {
+    background-color: #e53935;
+  }
+  .user-management-layout {
+    width: 100%;
+  }
+  
+  /* Update existing styles */
+.user-form-and-table {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .user-tab-content {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .user-table-container {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .user-table-container h3 {
+    color: #214163;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    color: #214163;
+    font-weight: 600;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .user-form-and-table {
+      flex-direction: column;
+    }
+    
+    .user-table-container {
+      margin-top: 2rem;
+    }
+  }
+  .error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }

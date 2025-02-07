@@ -1,0 +1,324 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* General Flexbox Helper Classes */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-dark {
+    background-color: #2c3e50;
+}
+
+.bg-light {
+    background-color: #ecf0f1;
+}
+
+/* Common Button Styling */
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Common Input Field Styling */
+input[type="text"], input[type="password"], select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #3498db;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3498db;
+}
+
+/* Container to prevent content from overlapping fixed elements */
+.content-container {
+    margin-left: 220px; /* Adjust for fixed sidebar */
+    margin-top: 120px; /* Adjust for fixed header */
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+/* Header Styling */
+/* Header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between left and right sections */
+    width: 100%;
+    height: 100px;
+    background-color: #08223b;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* Left section of header */
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo1 {
+    width: 200px;
+    margin-right: 30px;
+}
+
+.title {
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* Right section of header */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.username {
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.header-icon {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header-icon:hover {
+    color: #3498db;
+    transform: scale(1.1);
+}
+
+.logout-icon {
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo1 {
+        width: 150px;
+        margin-right: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .header-right {
+        gap: 15px;
+        padding-right: 10px;
+    }
+
+    .username {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .header-icon {
+        font-size: 18px;
+    }
+}
+
+/* Home Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 450px;
+    min-height: 100vh; /* Full screen height */
+}
+
+/* Home Section */
+.home1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(100vh - 100px); /* Adjust below fixed header */
+    padding-top: 120px; /* Push content down */
+    width: 100%;
+    
+}
+
+/* Home Section Heading */
+.home1 h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    
+}
+
+/* Home Section Paragraph */
+.home1 p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 0;
+   
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust home section styles */
+    .home1 h2 {
+        font-size: 28px;
+    }
+
+    .home1 p {
+        font-size: 16px;
+    }
+
+    .logo1 {
+        width: 150px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    /* Adjust for smaller screens */
+    .content-container {
+        margin-left: 0;
+        margin-top: 160px; /* Adjust for header */
+    }
+}
+/* Page container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Content container */
+.content-container {
+    margin-left: 250px;
+    margin-top: 100px;
+    padding: 20px;
+    min-height: calc(100vh - 100px);
+    background-color: #fff;
+}
+
+/* User management specific styles */
+.user-management {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-management h2 {
+    color: #214163;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.user-content {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        margin-left: 0;
+        margin-top: 160px;
+    }
+
+    .user-management {
+        padding: 15px;
+    }
+}
