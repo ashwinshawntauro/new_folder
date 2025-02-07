@@ -7,9 +7,9 @@ const Header = () => {
   const username = localStorage.getItem('username');
   
   const handleLogout = () => {
-    console.log('Logging out...');
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    // console.log('Logging out...');
+    // localStorage.removeItem('token');
+    // localStorage.removeItem('username');
     navigate('/user-management');
     console.log('Navigated to user management');
 };

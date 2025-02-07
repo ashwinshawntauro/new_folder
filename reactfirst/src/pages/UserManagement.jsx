@@ -37,7 +37,7 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const token = localStorage.getItem('user');
+      const token = localStorage.getItem('token');
       const response = await fetch('http://localhost:5000/api/users', {
         method: 'GET',
         headers: {
@@ -64,7 +64,7 @@ const UserManagement = () => {
     setSuccess('');
 
     try {
-      const token = localStorage.getItem('user');
+      const token = localStorage.getItem('token');
       const response = await fetch('http://localhost:5000/api/users', {
         method: 'POST',
         headers: {

@@ -25,18 +25,18 @@ router.post('/users', async (req, res) => {
     const client = await pool.connect();
     try {
         await client.query('BEGIN');
-        const { username,password, role } = req.body;
+        const { userName,userPassword, userRole } = req.body;
 
 
         // Validate input
-        if (!username || !password || !role) {
+        if (!userName || !userPassword || !userRole) {
             return res.status(400).json({ message: 'All fields are required' });
         }
 
         // Check if username already exists
         const userExists = await client.query(
             'SELECT user_name FROM users WHERE user_name = $1',
-            [username]
+            [userName]
         );
 
         if (userExists.rows.length > 0) {
@@ -45,12 +45,12 @@ router.post('/users', async (req, res) => {
 
         // Hash password
         const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
+        const hashedPassword = await bcrypt.hash(userPassword, salt);
 
         // Insert new user
         const result = await client.query(
             'INSERT INTO users (user_name, user_password, role, is_active) VALUES ($1, $2, $3, true) RETURNING user_name, role, is_active',
-            [username, hashedPassword, role]
+            [userName, hashedPassword, userRole]
         );
 
         await client.query('COMMIT');
